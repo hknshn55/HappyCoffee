@@ -25,12 +25,17 @@ namespace HappyCoffee.API.Controllers
         
         public async Task<IActionResult> Products()
         {
-            var products =await _productService.ProductList();
-            if (products.Count>0)
+            var products = await _productService.ProductList();
+            if (products.Count > 0)
             {
                 return Ok(products);
             }
             return NotFound("Ürün bulunamadı.");
+
+
+            //Veri tabanı kullanmadan test etmek isterseniz bu şekilde liste oluşturabilirsiniz.
+            //List<Product> p = new List<Product>() { new Product { Name="sadas", Price=10, Picture="asdasd", Id=1, Category = new Category { Name="hakan", Id=1 } } };
+            //return Ok(p);
         }
 
 
@@ -73,9 +78,9 @@ namespace HappyCoffee.API.Controllers
 
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromBody]int id)
+        public async Task<IActionResult> Delete([FromBody] int id)
         {
-            if (id>0)
+            if (id > 0)
             {
                 await _productService.Delete(id);
                 return Ok();

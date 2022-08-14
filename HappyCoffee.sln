@@ -5,17 +5,22 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.FormUI", "HappyCoffee.FormUI\HappyCoffee.FormUI.csproj", "{58B3544C-D5DB-43FB-AF2A-2BA8B6309D71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.Entities", "HappyCoffee.Entities\HappyCoffee.Entities.csproj", "{F47B9629-AA0E-4DDD-8E0D-4EE571EAB0AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyCoffee.Entities", "HappyCoffee.Entities\HappyCoffee.Entities.csproj", "{F47B9629-AA0E-4DDD-8E0D-4EE571EAB0AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.Core", "HappyCoffee.Core\HappyCoffee.Core.csproj", "{7381090B-C152-443B-9198-3D006D97E58E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyCoffee.Core", "HappyCoffee.Core\HappyCoffee.Core.csproj", "{7381090B-C152-443B-9198-3D006D97E58E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.DataAccess", "HappyCoffee.DataAccess\HappyCoffee.DataAccess.csproj", "{4B724444-0757-4C29-B922-F094A168DECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyCoffee.DataAccess", "HappyCoffee.DataAccess\HappyCoffee.DataAccess.csproj", "{4B724444-0757-4C29-B922-F094A168DECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.Business", "HappyCoffee.Business\HappyCoffee.Business.csproj", "{93A8EEC6-BA75-441F-B64A-E3E6C3AE5675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyCoffee.Business", "HappyCoffee.Business\HappyCoffee.Business.csproj", "{93A8EEC6-BA75-441F-B64A-E3E6C3AE5675}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.WebUI", "HappyCoffee.WebUI\HappyCoffee.WebUI.csproj", "{C4B2915E-4E27-4D77-B75C-6C1C35302F3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyCoffee.WebUI", "HappyCoffee.WebUI\HappyCoffee.WebUI.csproj", "{C4B2915E-4E27-4D77-B75C-6C1C35302F3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyCoffee.API", "HappyCoffee.API\HappyCoffee.API.csproj", "{80D31010-A363-4DAC-B2EC-E66940011D58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HappyCoffee.API", "HappyCoffee.API\HappyCoffee.API.csproj", "{80D31010-A363-4DAC-B2EC-E66940011D58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Note", "Note", "{04537FD8-043D-4961-B0F0-B829FE1F2FB7}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -96,6 +96,7 @@ namespace HappyCoffee.FormUI
             this.Controls.Add(this.pictureBox1);
             this.Name = "TableSelect";
             this.Text = "TableSelect";
+            this.Load += new System.EventHandler(this.TableSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

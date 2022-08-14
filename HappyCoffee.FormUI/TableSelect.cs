@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HappyCoffee.FormUI.Business;
+using HappyCoffee.FormUI.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,10 @@ namespace HappyCoffee.FormUI
         public TableSelect()
         {
             InitializeComponent();
+        }
+        private void TableSelect_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

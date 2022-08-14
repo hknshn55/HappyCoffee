@@ -33,12 +33,13 @@ namespace HappyCoffee.FormUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.dgwProduct = new System.Windows.Forms.DataGridView();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.urunler = new System.Windows.Forms.ListView();
             this.Price = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnApproval = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnChange = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).BeginInit();
@@ -70,6 +71,7 @@ namespace HappyCoffee.FormUI
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(214, 21);
             this.cmbCategory.TabIndex = 2;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // dgwProduct
             // 
@@ -79,20 +81,20 @@ namespace HappyCoffee.FormUI
             this.dgwProduct.Size = new System.Drawing.Size(330, 246);
             this.dgwProduct.TabIndex = 3;
             // 
-            // listView1
+            // urunler
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(346, 50);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(435, 208);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.urunler.HideSelection = false;
+            this.urunler.Location = new System.Drawing.Point(414, 50);
+            this.urunler.Name = "urunler";
+            this.urunler.Size = new System.Drawing.Size(367, 208);
+            this.urunler.TabIndex = 4;
+            this.urunler.UseCompatibleStateImageBehavior = false;
             // 
             // Price
             // 
             this.Price.AutoSize = true;
             this.Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Price.Location = new System.Drawing.Point(346, 271);
+            this.Price.Location = new System.Drawing.Point(409, 271);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(162, 25);
             this.Price.TabIndex = 5;
@@ -102,7 +104,7 @@ namespace HappyCoffee.FormUI
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPrice.Location = new System.Drawing.Point(504, 271);
+            this.lblPrice.Location = new System.Drawing.Point(567, 271);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(103, 25);
             this.lblPrice.TabIndex = 6;
@@ -121,7 +123,7 @@ namespace HappyCoffee.FormUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(475, 12);
+            this.label1.Location = new System.Drawing.Point(526, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 25);
             this.label1.TabIndex = 8;
@@ -129,19 +131,29 @@ namespace HappyCoffee.FormUI
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnChange);
             this.panel1.Controls.Add(this.categoryName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbCategory);
             this.panel1.Controls.Add(this.btnApproval);
             this.panel1.Controls.Add(this.dgwProduct);
             this.panel1.Controls.Add(this.lblPrice);
-            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Controls.Add(this.urunler);
             this.panel1.Controls.Add(this.Price);
             this.panel1.Location = new System.Drawing.Point(2, 191);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(781, 308);
             this.panel1.TabIndex = 9;
-            this.panel1.Visible = false;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(346, 108);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(62, 79);
+            this.btnChange.TabIndex = 9;
+            this.btnChange.Text = "Ekle =>";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // label2
             // 
@@ -163,6 +175,7 @@ namespace HappyCoffee.FormUI
             this.Controls.Add(this.pictureBox1);
             this.Name = "Order";
             this.Text = "Order";
+            this.Load += new System.EventHandler(this.Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -178,13 +191,14 @@ namespace HappyCoffee.FormUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.DataGridView dgwProduct;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView urunler;
         private System.Windows.Forms.Label Price;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnApproval;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnChange;
     }
 }
 

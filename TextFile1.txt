@@ -1,0 +1,11 @@
+ODEV
+
+Veri tabaný baðlantý cümlesi context içerisinde deðil appsetting.json üzerinde yazýlacak ve service olarak eklenecek.
+
+Sipariþ tablosu eklenecek.
+Form üzerinden alýnan sipariþler bu tabloya eklenecek.
+Role bazlý yetkilendirme yapýlacak
+WebUI ýndex yapýlacak.(Ürün bilgileri fiyatlarýyla beraber yazdýrýlacak)
+WebUI üzerinde iletiþim sayfasý yapýlacak ve google map üzerinden adres gösterilecek.
+
+Kodlar düzenlenecek. 
