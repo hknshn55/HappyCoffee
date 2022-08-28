@@ -16,7 +16,7 @@ namespace HappyCoffee.FormUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TableSelect());
+            Application.Run(new Order());
         }
     }
 }

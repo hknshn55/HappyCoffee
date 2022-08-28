@@ -8,7 +8,11 @@ namespace HappyCoffee.Core.Entities
 {
     public abstract class EntityBase
     {
+        public EntityBase()
+        {
+            CreateDate = DateTime.Now;
+        }
         public int Id { get; set; }
-        public string Name { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

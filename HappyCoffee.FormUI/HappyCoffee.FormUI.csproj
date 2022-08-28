@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CategoryManager.cs" />
+    <Compile Include="Business\OrderManager.cs" />
     <Compile Include="Business\ProductManager.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Order.cs">
       <SubType>Form</SubType>

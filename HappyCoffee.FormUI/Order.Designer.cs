@@ -33,7 +33,6 @@ namespace HappyCoffee.FormUI
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.dgwProduct = new System.Windows.Forms.DataGridView();
-            this.urunler = new System.Windows.Forms.ListView();
             this.Price = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnApproval = new System.Windows.Forms.Button();
@@ -41,9 +40,11 @@ namespace HappyCoffee.FormUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChange = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // categoryName
@@ -81,15 +82,6 @@ namespace HappyCoffee.FormUI
             this.dgwProduct.Size = new System.Drawing.Size(330, 246);
             this.dgwProduct.TabIndex = 3;
             // 
-            // urunler
-            // 
-            this.urunler.HideSelection = false;
-            this.urunler.Location = new System.Drawing.Point(414, 50);
-            this.urunler.Name = "urunler";
-            this.urunler.Size = new System.Drawing.Size(367, 208);
-            this.urunler.TabIndex = 4;
-            this.urunler.UseCompatibleStateImageBehavior = false;
-            // 
             // Price
             // 
             this.Price.AutoSize = true;
@@ -118,6 +110,7 @@ namespace HappyCoffee.FormUI
             this.btnApproval.TabIndex = 7;
             this.btnApproval.Text = "Onayla";
             this.btnApproval.UseVisualStyleBackColor = true;
+            this.btnApproval.Click += new System.EventHandler(this.btnApproval_Click);
             // 
             // label1
             // 
@@ -131,6 +124,7 @@ namespace HappyCoffee.FormUI
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.btnChange);
             this.panel1.Controls.Add(this.categoryName);
             this.panel1.Controls.Add(this.label1);
@@ -138,7 +132,6 @@ namespace HappyCoffee.FormUI
             this.panel1.Controls.Add(this.btnApproval);
             this.panel1.Controls.Add(this.dgwProduct);
             this.panel1.Controls.Add(this.lblPrice);
-            this.panel1.Controls.Add(this.urunler);
             this.panel1.Controls.Add(this.Price);
             this.panel1.Location = new System.Drawing.Point(2, 191);
             this.panel1.Name = "panel1";
@@ -165,11 +158,19 @@ namespace HappyCoffee.FormUI
             this.label2.TabIndex = 11;
             this.label2.Text = "Masa";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(414, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(364, 215);
+            this.dataGridView1.TabIndex = 10;
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(787, 500);
+            this.ClientSize = new System.Drawing.Size(796, 500);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -180,6 +181,7 @@ namespace HappyCoffee.FormUI
             ((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +193,6 @@ namespace HappyCoffee.FormUI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.DataGridView dgwProduct;
-        private System.Windows.Forms.ListView urunler;
         private System.Windows.Forms.Label Price;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button btnApproval;
@@ -199,6 +200,7 @@ namespace HappyCoffee.FormUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

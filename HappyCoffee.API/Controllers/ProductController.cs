@@ -13,24 +13,31 @@ namespace HappyCoffee.API.Controllers
     [Route("api/[Controller]")]
     public class ProductController :ControllerBase
     {
-        private readonly IProductService _productService;
-
-        public ProductController(IProductService productService)
+        List<Product> products = new List<Product>()
         {
-            _productService = productService;
-        }
+            new Product { Id=1, CategoryId = 1, Name = "Mocca", Price = 5,  Picture ="https://i.nefisyemektarifleri.com/2019/02/17/mocca-1.jpg", Category = new Category{ Id=1,Name="Kahve" } },
+             new Product { Id=2, CategoryId = 2, Name = "Expresso", Price = 8,  Picture ="https://d17wu0fn6x6rgz.cloudfront.net/img/w/yazi/mgt/shutterstock_517083931.webp", Category =new Category{ Id=1,Name="Kahve" } },
+              new Product { Id=3, CategoryId = 3, Name = "Türk Kahvesi", Price = 100,  Picture ="https://www.citlekci.com.tr/Uploads/UrunResimleri/turk-kahvesi--kahve-8b75.png" , Category = new Category{ Id=1,Name="Kahve" } }
+        };
+
+        //private readonly IProductService _productService;
+
+        //public ProductController(IProductService productService)
+        //{
+        //    _productService = productService;
+        //}
 
 
         [HttpGet]
-        
         public async Task<IActionResult> Products()
         {
-            var products = await _productService.ProductList();
-            if (products.Count > 0)
-            {
-                return Ok(products);
-            }
-            return NotFound("Ürün bulunamadı.");
+            return Ok(products);
+            //var products = await _productService.ProductList();
+            //if (products.Count > 0)
+            //{
+            //    return Ok(products);
+            //}
+            //return NotFound("Ürün bulunamadı.");
 
 
             //Veri tabanı kullanmadan test etmek isterseniz bu şekilde liste oluşturabilirsiniz.
@@ -41,51 +48,89 @@ namespace HappyCoffee.API.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProduct([FromBody] int id)
+        public async Task<IActionResult> Product( int id)
         {
-            var product = await _productService.GetProductById(id);
-            if (product == null)
+            var pr = products.Where(x=>x.Id == id);
+            if (pr is not null)
             {
-                return Ok(product);
+                return Ok(pr);
             }
-            return NotFound("Ürün bulunamadı.");
+            return BadRequest();
+
+            //var product = await _productService.GetProductById(id);
+            //if (product == null)
+            //{
+            //    return Ok(product);
+            //}
+            //return NotFound("Ürün bulunamadı.");
         }
 
 
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(ProductDto productDto)
+        public async Task<IActionResult> AddProduct(Product product /*ProductDto productDto*/)
         {
-            if (ModelState.IsValid)
+            int elemansayisi = products.Count;
+            product.Id = products.Count + 1;
+            products.Add(product);
+            if (elemansayisi < products.Count)
             {
-                await _productService.Add(productDto);
-                return Ok();
+                return Ok(product);
             }
-            return BadRequest();
+            return NotFound();
+
+
+            //if (ModelState.IsValid)
+            //{
+            //    await _productService.Add(productDto);
+            //    return Ok();
+            //}
+            //return BadRequest();
         }
 
 
         [HttpPut]
         public async Task<IActionResult> UpdateProduct([FromBody] Product product)
         {
-            if (ModelState.IsValid)
+            var pr = products.FirstOrDefault(x => x.Id == product.Id);
+            if (pr != null)
             {
-                await _productService.Update(product);
-                return Ok();
+                products.Remove(pr);
+                products.Add(new Product { Id = pr.Id, Name = product.Name, CreateDate = product.CreateDate });
+                return Ok(products.FirstOrDefault(x => x.Id == product.Id));
             }
             return BadRequest();
+
+
+
+
+            //if (ModelState.IsValid)
+            //{
+            //    await _productService.Update(product);
+            //    return Ok();
+            //}
+            //return BadRequest();
         }
 
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromBody] int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id > 0)
+            var pr = products.FirstOrDefault(x => x.Id == id);
+            if (pr != null)
             {
-                await _productService.Delete(id);
-                return Ok();
+                products.Remove(pr);
+                return Ok(pr);
             }
             return BadRequest();
+
+
+            //if (id > 0)
+            //{
+            //    await _productService.Delete(id);
+            //    return Ok();
+            //}
+            //return BadRequest();
         }
     }
 }

@@ -25,8 +25,13 @@ namespace HappyCoffee.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+            services.AddCors(corsOptions=>corsOptions.AddDefaultPolicy(
+                x=>x.AllowCredentials()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .SetIsOriginAllowed(x=>true)));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HappyCoffee.API", Version = "v1" });
@@ -42,9 +47,10 @@ namespace HappyCoffee.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HappyCoffee.API v1"));
             }
+            app.UseCors();
 
             app.UseRouting();
-
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -1,8 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <center><img style="height:500px" src="https://img.freepik.com/premium-vector/happy-coffee-icon-kawaii-food_76844-1595.jpg?w=740" /></center>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="kapsayici">
+                
+                @*script üzerinden kodları buraya aktaracağız*@
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var a = fetch("http://localhost:8891/api/Product")
+            .then(response => response.json()).then(x => x.forEach(function (item) {
+                document.getElementById('kapsayici').innerHTML += `
+<div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <h4 class="text-center"><span class="label label-info">${item.category.name}</span></h4>
+                        <img style="height:100px;" src= "${item.picture}"/>
+                        <div class="caption">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6" >
+                                    <h3>${item.name}</h3>
+                                </div>
+                                <div class="col-md-6 col-xs-6 price">
+                                    <h3>
+                                        <label>${item.price}TL</label>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 `
+            }));
+    </script>
