@@ -9,3 +9,5 @@ WebUI ýndex yapýlacak.(Ürün bilgileri fiyatlarýyla beraber yazdýrýlacak)
 WebUI üzerinde iletiþim sayfasý yapýlacak ve google map üzerinden adres gösterilecek.
 
 Kodlar düzenlenecek. 
+
+mailto

@@ -3,13 +3,18 @@
 <h1>İLETİŞİM</h1>
 <hr />
 <label>LinkedIn :</label><span>
-    <a href="https://www.linkedin.com/in/1hakansahin/">Profile git.</a></span>
+    <a href="https://www.linkedin.com/in/1hakansahin/">Profile git.</a>
+</span>
 <hr />
-<a onclick="Mail()" class="btn btn-success" >Mail iste</a>
+<a onclick="Redirect()" class="btn btn-success">Mail iste</a>
 <hr />
 <script>
-    function Mail() {
-        alert("Mail Adress : hknshn55@hotmail.com" )
-    }
-    
+     function Redirect()
+     {
+        var cf = confirm("Mail Adress : hknshn55@hotmail.com \n" + "Outlook hesabınıza erişmek için tamam seçeneğini tıklayabilirsiniz.");
+        if (cf)
+        {
+           window.location.assign("https://outlook.live.com/owa/");
+        }
+     };
 </script>

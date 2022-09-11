@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model HappyCoffee.Entities.Concrete.Product
+<head>
+    <link href="~/css/detail.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="container-fliud">
+                <div class="wrapper row">
+                    <div class="preview col-md-6">
+
+                        <div class="preview-pic tab-content">
+                            <div class="tab-pane active" id="pic-1"><img src="@Model.Picture" /></div>
+                        </div>
+                    </div>
+                    <div class="details col-md-6">
+                        <h3 class="product-title">@Model.Name</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <span class="review-no">41 reviews</span>
+                        </div>
+                        <p class="product-description">Bu kahve uykunuzu açar ve güne güzel başlamanızı sağlar. İçerisinde x ve y malzemeleri bulunur. Ürün açıklaması yazmak gerekir ama bu seferlik manuel olsun</p>
+                        <h4 class="price">current price: <span>@Model.Price.ToString("C2")</span></h4>
+                        <h5 class="sizes">
+                            sizes:
+                            <span class="size" data-toggle="tooltip" title="small">Küçük</span>
+                            <span class="size" data-toggle="tooltip" title="medium">Orta</span>
+                            <span class="size" data-toggle="tooltip" title="large">Büyük</span>
+                        </h5>
+                        <h5 class="colors">
+                            colors:
+                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

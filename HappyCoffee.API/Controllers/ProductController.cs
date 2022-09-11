@@ -50,7 +50,7 @@ namespace HappyCoffee.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Product( int id)
         {
-            var pr = products.Where(x=>x.Id == id);
+            var pr = products.FirstOrDefault(x=>x.Id == id);
             if (pr is not null)
             {
                 return Ok(pr);
